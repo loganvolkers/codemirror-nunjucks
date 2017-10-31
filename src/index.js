@@ -1,11 +1,14 @@
 
 import CodeMirror from 'codemirror'
-import Extension from './extension'
-
-
+import NunjucksExtension from './extension'
+import nunjucks from "./modes/nunjucks";
 
 export default function(){
-    CodeMirror.defineExtension('enableNunjucksTags', Extension);
+
+    CodeMirror.defineMode('nunjucks', nunjucks);
+    CodeMirror.defineExtension('enableNunjucksTags', function(options) {
+      return new NunjucksExtension({editor: this, ...options});
+    });
     
     return 'Welcome to codemirror-nunjuckss'
 }
