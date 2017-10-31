@@ -21,10 +21,8 @@ export default class NunjucksExtension{
     }
 
     init(){
-      const refreshFn = ()=>{
-          return this._highlightNunjucksTags(this.render);
-      }
-    
+      const refreshFn = () => this._highlightNunjucksTags(this.render);
+
       const debouncedRefreshFn = throttle(100, refreshFn);
     
       this.editor.on('change', (cm, change) => {
