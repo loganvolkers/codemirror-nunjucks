@@ -1,6 +1,32 @@
 .nunjucks-tag,
-.nunjucks-variable{
+.nunjucks-variable {
     background: #CCC;
     padding: 2px 5px;
     border-radius: 5px;
+}
+
+
+.fancy-hint {
+    background: #EEE;
+    border-radius: 5px;
+    display: block;
+    white-space: nowrap;
+}
+
+.fancy-hint .name,
+.fancy-hint .label,
+.fancy-hint .value {
+    display: inline !important;
+}
+
+.fancy-hint .label{
+    background: red;
+}
+
+.fancy-hint .name{
+    background: green;
+}
+
+.fancy-hint .value {
+    background: blue;
 }

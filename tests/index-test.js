@@ -15,13 +15,13 @@ describe('Module template', () => {
     const ta = document.createElement("textarea");
     document.body.appendChild(ta);
     const editor = CodeMirror.fromTextArea(ta, {
-      lineNumbers: true,
+      lineNumbers: false,
       mode: "nunjucks",
       extraKeys: {
         'Ctrl-Space': 'autocomplete',
       },
       environmentAutocomplete:{
-        getVariables: ()=>Promise.resolve(["bang"]),
+        getVariables: ()=>Promise.resolve(["firstName", "lastName", "age", "birthday"]),
         getTags: ()=>Promise.resolve([
             {
               name: "foo",
